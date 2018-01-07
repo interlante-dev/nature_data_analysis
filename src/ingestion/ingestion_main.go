@@ -9,23 +9,24 @@ import (
 
 type IngestionEngine struct {
 	Engines []struct {
-		Engine      	string 		`json:"engine"`
-		CurrentDate 	string 		`json:"current_as_of"`
-		Frequency   	int    		`json:"frequency"`
-		RequestString	[]string	`json:"request_strings"`
+		Engine        string   `json:"engine"`
+		CurrentDate   string   `json:"current_as_of"`
+		Frequency     int      `json:"frequency"`
+		RequestString []string `json:"request_strings"`
 	} `json:"engines"`
 }
 
 func main() {
 	fmt.Println("main ingestion")
-	apiKeys := make(map[string][])
+	// apiKeys := make(map[string][])
 	keysList := keys.GetKeys("/home/jint-dev/passwords.csv")
-	ingestionEngines := GetIngestionEngines("/home/jint-dev/dev/natural_data_analysis/src/ingestion/ingestion_config.json")
-	for _, val := range ingestionEngines.Engines{
-		
+	ingestionEngines := GetIngestionEngines("/home/jint-dev/dev/nature_data_analysis/src/ingestion/ingestion_config.json")
+	for _, val := range ingestionEngines.Engines {
+		fmt.Println(val)
 	}
 	fmt.Println(keysList)
-	for {}
+	for {
+	}
 }
 
 func GetIngestionEngines(filePath string) (output IngestionEngine) {
