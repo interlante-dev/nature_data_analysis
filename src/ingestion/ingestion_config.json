@@ -1,0 +1,20 @@
+{
+    "engines": [
+        {
+            "engine": "NASA",
+            "current_as_of": "2018-01-07",
+            "frequency": 600,
+            "request_strings": [
+                ""
+            ]
+        },
+        {
+            "engine": "NOAA",
+            "current_as_of": "2018-01-07",
+            "frequency": 600,
+            "request_strings": [
+                ""
+            ]
+        }
+    ]
+}
