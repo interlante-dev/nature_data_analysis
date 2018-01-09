@@ -1,4 +1,4 @@
-package keys
+package common
 
 import (
 	"encoding/csv"
@@ -12,7 +12,7 @@ type DBKey struct {
 }
 
 func GetKeys(passwordsCSV string) (output map[string]DBKey) {
-	var temp_output = make(map[string]DBKey)
+	var tempOutput = make(map[string]DBKey)
 	file, err := os.Open(passwordsCSV)
 	if err != nil {
 		fmt.Println(err)
@@ -29,9 +29,9 @@ func GetKeys(passwordsCSV string) (output map[string]DBKey) {
 			var out DBKey
 			out.Username = val[1]
 			out.Password = val[2]
-			temp_output[val[0]] = out
+			tempOutput[val[0]] = out
 		}
 	}
-	output = temp_output
+	output = tempOutput
 	return output
 }
